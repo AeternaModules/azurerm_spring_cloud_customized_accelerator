@@ -31,7 +31,7 @@ EOT
     name                        = string
     spring_cloud_accelerator_id = string
     accelerator_tags            = optional(list(string))
-    accelerator_type            = optional(string, "Accelerator")
+    accelerator_type            = optional(string) # Default: "Accelerator"
     description                 = optional(string)
     display_name                = optional(string)
     icon_url                    = optional(string)
