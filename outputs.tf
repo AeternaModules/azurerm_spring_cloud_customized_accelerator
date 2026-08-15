@@ -20,7 +20,7 @@ output "spring_cloud_customized_accelerators_display_name" {
 }
 output "spring_cloud_customized_accelerators_git_repository" {
   description = "Map of git_repository values across all spring_cloud_customized_accelerators, keyed the same as var.spring_cloud_customized_accelerators"
-  value       = { for k, v in azurerm_spring_cloud_customized_accelerator.spring_cloud_customized_accelerators : k => v.git_repository if v.git_repository != null && length(v.git_repository) > 0 }
+  value       = { for k, v in azurerm_spring_cloud_customized_accelerator.spring_cloud_customized_accelerators : k => one(v.git_repository) if v.git_repository != null && length(v.git_repository) > 0 }
   sensitive   = true
 }
 output "spring_cloud_customized_accelerators_icon_url" {
